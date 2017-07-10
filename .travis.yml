@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "6"
+before_install:
+  - npm install hexo-cli -g
+install:
+  - npm install
+before_script:
+  - git clone --branch master --single-branch https://github.com/jinasonlin/jinasonlin.github.io.git public
+script:
+  - hexo generate
+after_success:
+  - cd public
+  - git config user.name "Lin Qun@Travis" 
+  - git config user.email "jinasonlin@gmail.com"
+  - git add .
+  - git commit -m "Travis CI Auto Commit"
+  - git push https://$DEPLOY_TOKEN@github.com/jinasonlin/jinasonlin.github.io.git master
+branches:
+  only:
+    - source
