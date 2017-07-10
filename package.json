@@ -1,5 +1,7 @@
 {
-  "name": "hexo-site",
+  "name": "github.io",
+  "description": "Blog of Jinason Lin ",
+  "author": "Lin Qun",
   "version": "0.0.0",
   "private": true,
   "hexo": {
